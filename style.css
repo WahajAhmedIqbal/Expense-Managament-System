@@ -1,0 +1,12 @@
+.container1
+{
+    border: 1px solid pink;
+    /* width: 50%; */
+    margin-top: auto;
+margin-bottom: auto;
+}
+.container2
+{
+    border: 1px solid black;
+    /* width: 50%; */
+}
