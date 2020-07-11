@@ -12,14 +12,10 @@
   </head>
   <body>
     <div class="contaier d-flex justify-content-center align-items-center container1">
-        <form  class=" justify-content-center was-validated"  onsubmit="signup(event);">
+        <form  class=" justify-content-center was-validated"  onsubmit="login(event);">
             <div class="header">
                 <h1>Login Form</h1>
             </div>
-            <div class="form-group">
-                <label for="email">Full Name</label>
-                <input type="text" class="form-control" placeholder="Enter Full Name" id="fullname" required>
-              </div>
             <div class="form-group">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" placeholder="Enter email" id="email" required>
@@ -28,12 +24,7 @@
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" placeholder="Enter password" id="password1" required >
                     <p id="p1"></p>
-            </div>
-            <div class="form-group">
-              <label for="pwd">Confirm Password:</label>
-              <input type="password" class="form-control" placeholder="Confim Password" id="password2" required >
-              <p id="p2"></p>
-            </div>    
+            </div> 
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>
