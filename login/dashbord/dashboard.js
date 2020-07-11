@@ -145,6 +145,7 @@ function saveExpense(){
             $('#incomeModal').modal('hide')
         }).catch(function(error){
             alert("Error")
+            clearincomemodel()
         })
 
         function clearincomemodel(){
