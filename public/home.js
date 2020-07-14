@@ -6,14 +6,14 @@ function signup(e) {
     const email = document.getElementById('email').value
     const password = document.getElementById('password1').value
     const password2 = document.getElementById('password2').value
-    const pass1 = document.getElementById('p1').value
-    const pass2 = document.getElementById('p2').value
-
+    
+    localStorage.setItem('userName' , JSON.stringify(fullname))
     console.log("fname" , fullname , 'emai' , email , 'password1' , password , 'pas' , password2);
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(user)
     {
+        localStorage.setItem('user' , fullname)
         alert("successful")
         window.location.replace('./login/login.html');
     }).catch(function(error) {

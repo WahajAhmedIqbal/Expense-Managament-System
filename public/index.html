@@ -11,44 +11,49 @@
     <title>Expense Management</title>
   </head>
   <body>
-    <div class="contaier d-flex justify-content-center align-items-center container1">
-        <form class="table"  class=" justify-content-center validated"  onsubmit="signup(event);">
-            <div class="form-group">
-              <div class="header">
-                <h1>Signup Form</h1>
-            </div>
-              <div class="form-group">
-                <label for="email">Full Name</label>
-                <input type="text" class="form-control" placeholder="Enter Full Name" id="fullname" required>
-              </div>
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" placeholder="Enter email" id="email" required>
+    <div class="container-fluid cnt-main">
+    <div class="d-flex justify-content-center align-items-center container1">
+        <form class=" justify-content-center validated"  onsubmit="signup(event);">
+          <div class="form-group">
+            <div class="header">
+              <h1>Signup Form</h1>
             </div>
             <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" placeholder="Enter password" id="password1" required >
-                    <p id="p1"></p>
+              <label for="email">Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter Full Name" id="fullname" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address:</label>
+              <input type="email" class="form-control" placeholder="Enter email" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" placeholder="Enter password" id="password1" required >
+              <p id="p1"></p>
             </div>
             <div class="form-group">
               <label for="pwd">Confirm Password:</label>
               <input type="password" class="form-control" placeholder="Confim Password" id="password2" required >
               <p id="p2"></p>
             </div>    
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button></br>
-            <label ><a href="./login/login.html">Login</a></label>
-          </form>
-    </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button></br>
+          <label ><a href="./login/login.html">Login</a></label>
+        </form>
+      </div>
+      </div>
+      
 
-    <!-- Optional JavaScript -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+
+
+      <!-- Optional JavaScript -->
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+      <!-- Add Firebase products that you want to use -->
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+      <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
 

@@ -13,10 +13,10 @@
   <body>
     <div class="contaier   container1">
         <div class="head2">
-            <h1>dashboard</h1>
-            <div class="padding"> Welcome to <span id="user"></span> </div>
+            <!-- <h1>dashboard</h1> -->
+            <div class="padding"> Welcome  <span id="user"> </span> </div>
             <img class="padding" width="30" src="https://i.ya-webdesign.com/images/avatar-png-1.png" />
-            <p class="padding"> Logout 
+            <p class="padding" id="logout" onclick="logout()"> Logout 
         </div>
         <div class="dateYearcatSection">
           <div class="filters">
@@ -84,7 +84,6 @@
                 </select></br>
                   Date   <input type="date" id="date" name="date"></br>
                   Discription <textarea id="Discription"></textarea>
-                  Receipt <input type="file" id="file-expense">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -129,8 +128,6 @@
           <td>Type</td>
           <td>Category</td>
           <td>Date</td>
-          <td>Image</td>
-
         </tr>
         </thead>
         <tbody id="tbody">
@@ -171,6 +168,7 @@
     firebase.analytics();
     </script>
     <script src="dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
