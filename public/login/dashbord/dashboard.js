@@ -1,14 +1,15 @@
 getdatatable()
-setname()
-function setname(){
-    const getname = localStorage.getItem('userName');
-    const upname = JSON.parse(getname);
-    const pname = document.getElementById('user')
-    pname.innerHTML = upname    
-}
+// setname()
+// function setname(){ 
+//     const getname = localStorage.getItem('userName');
+//     const upname = JSON.parse(getname);
+//     const pname = document.getElementById('user')
+//     pname.innerHTML = upname    
+// }
 function logout(){
     window.location.replace('../login.html')
 }
+
 
 
 function saveIncome(){
@@ -79,6 +80,7 @@ function clearmodel(){
 
 function getdatatable(){
     const userid = localStorage.getItem('userId')
+    const month = document.getElementById('month')
     const table = document.getElementById('tbody')
     table.innerHTML = ""
 
@@ -98,7 +100,8 @@ function getdatatable(){
             type.innerHTML = data.type
             category.innerHTML = data.category
             date.innerHTML = moment(data.date.toDate()).format('MMMM Do YYYY')
-
+            
+            
             row.appendChild(amount)
             row.appendChild(type)
             row.appendChild(category)
@@ -110,9 +113,12 @@ function getdatatable(){
 function typefilter(){
     const userid = localStorage.getItem('userId')
     const type = document.getElementById('filter').value
-    if(type === 'all'){
+    monthfilter()
+    if(type === 'all' ){
         return getdatatable()
     }
+    
+    
 
     const table = document.getElementById('tbody')
     table.innerHTML = ""
@@ -129,20 +135,42 @@ function typefilter(){
             const amount = document.createElement('TD')
             const type = document.createElement('TD')
             const category = document.createElement('TD')
-            const date = document.createElement('TD')
-            
+            const date = document.createElement('TD')            
         
             amount.innerHTML = data.amount
             type.innerHTML = data.type
             category.innerHTML = data.category
             date.innerHTML = moment(data.date.toDate()).format('MMMM Do YYYY')
-           
+            
+
+            newmonth = (data.date.toDate()).format('MMMM Do YYYY')
+
 
             row.appendChild(amount)
             row.appendChild(type)
             row.appendChild(category)
             row.appendChild(date)
             table.appendChild(row)
+        });
+    });
+}
+function monthfilter(){
+    const userid = localStorage.getItem('userId')
+    const month = document.getElementById('month').value
+    console.log('month-->' , month)
+    
+
+    firebase.firestore().collection('transection')
+    .where('userid' , '==' , userid)
+    .get()    
+    .then(function(snaps){
+        snaps.forEach(function(doc) {
+            const data = doc.data()
+                  
+            date.innerHTML = moment(data.date.toDate()).format('MMMM')
+            
+
+           
         });
     });
 }
