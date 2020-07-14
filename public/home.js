@@ -10,7 +10,6 @@ function signup(e) {
     localStorage.setItem('userName' , JSON.stringify(fullname))
     console.log("fname" , fullname , 'emai' , email , 'password1' , password , 'pas' , password2);
 
-
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(user)
     {

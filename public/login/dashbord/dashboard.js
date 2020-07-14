@@ -1,31 +1,33 @@
 getdatatable()
+// monthfilter()
 // setname()
 // function setname(){ 
-//     const getname = localStorage.getItem('userName');
-//     const upname = JSON.parse(getname);
-//     const pname = document.getElementById('user')
-//     pname.innerHTML = upname    
-// }
-function logout(){
-    window.location.replace('../login.html')
-}
-
-
-
-function saveIncome(){
-    const userid = localStorage.getItem('userId')
-    const amount = document.getElementById('amount').value
-    const category = document.getElementById('category').value
-    const date = document.getElementById('date').valueAsDate
-    const Discription = document.getElementById('Discription').value
+    //     const getname = localStorage.getItem('userName');
+    //     const upname = JSON.parse(getname);
+    //     const pname = document.getElementById('user')
+    //     pname.innerHTML = upname    
+    // }
+    function logout(){
+        window.location.replace('../login.html')
+    }
     
-    firebase.firestore().collection('transection').add({
-        amount,
-        date,
-        Discription,
-        category,
-        userid,
-        type : 'Income'
+    
+    function saveIncome(){
+        const userid = localStorage.getItem('userId')
+        const amount = document.getElementById('amount').value
+        const category = document.getElementById('category').value
+        const date = document.getElementById('date').valueAsDate
+        const Discription = document.getElementById('Discription').value
+        
+        
+        
+        firebase.firestore().collection('transection').add({
+            amount,
+            date,
+            Discription,
+            category,
+            userid,
+            type : 'Income'
     }).then(function(){
         alert("successful")
         getdatatable();
@@ -80,13 +82,14 @@ function clearmodel(){
 
 function getdatatable(){
     const userid = localStorage.getItem('userId')
-    const month = document.getElementById('month')
+    // const month = document.getElementById('month')
     const table = document.getElementById('tbody')
     table.innerHTML = ""
 
     firebase.firestore().collection('transection')
     .where('userid' , '==' , userid)
-    .orderBy("date" , "desc").get()    
+    .orderBy("date" , "desc")
+    .get()    
     .then(function(snaps){
         snaps.forEach(function(doc) {
             const data = doc.data()
@@ -113,7 +116,7 @@ function getdatatable(){
 function typefilter(){
     const userid = localStorage.getItem('userId')
     const type = document.getElementById('filter').value
-    monthfilter()
+    // monthfilter()
     if(type === 'all' ){
         return getdatatable()
     }
@@ -142,35 +145,11 @@ function typefilter(){
             category.innerHTML = data.category
             date.innerHTML = moment(data.date.toDate()).format('MMMM Do YYYY')
             
-
-            newmonth = (data.date.toDate()).format('MMMM Do YYYY')
-
-
             row.appendChild(amount)
             row.appendChild(type)
             row.appendChild(category)
             row.appendChild(date)
             table.appendChild(row)
-        });
-    });
-}
-function monthfilter(){
-    const userid = localStorage.getItem('userId')
-    const month = document.getElementById('month').value
-    console.log('month-->' , month)
-    
-
-    firebase.firestore().collection('transection')
-    .where('userid' , '==' , userid)
-    .get()    
-    .then(function(snaps){
-        snaps.forEach(function(doc) {
-            const data = doc.data()
-                  
-            date.innerHTML = moment(data.date.toDate()).format('MMMM')
-            
-
-           
         });
     });
 }
