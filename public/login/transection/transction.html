@@ -11,52 +11,72 @@
     <title>Transection </title>
   </head>
   <body>
-      <div class="container-fluid">
-        <div class="head2">
-            <h1 style="color: aliceblue;"> <a href="../dashbord/dashboard.html"> GO TO DASHBOARD</a></h1>
+      <div class="container-fluid" style="padding-right: 0;padding-left: 0;">
+        <div class="head2" style="box-shadow: 5px 10px 18px #888888;">
+            <h1 style="position: relative;color: aliceblue; right: 860px;"> <a href="../dashbord/dashboard.html"> GO TO DASHBOARD</a></h1>
             <!-- <h1>dashboard</h1> -->
-            <div class="padding"> Welcome  <span id="user"> </span> </div>
+            <div class="padding"> <span style="font-size: 30px;color: black;"> Welcome </span>  <span style="font-size: 30px;color: black;" id="user"> </span> </div>
             <img class="padding" width="30" src="https://i.ya-webdesign.com/images/avatar-png-1.png" />
-            <p class="padding" id="logout" onclick="logout()"> Logout 
+            <p style="font-size: 30px;color: black;" class="padding" id="logout" onclick="logout()"> Logout 
         </div>
         <div class="totalIcome">
-            <label for="incomeshow"> <h2>Youre Total Income </h2></label></br>
-            <p id='incomeflt'><span style="font-size: 35px;">Rs</span>
-                <span style="font-size: 35px;" id="incomeamount"></span>
+            <label style="padding-top: 20px;" for="incomeshow"> <h2>Youre Total Income </h2></label></br>
+            <p id='incomeflt'><span style="font-size: 35px;color: #448243;">Rs : </span>
+                <span style="font-size: 35px;color: #448243;" id="incomeamount"></span>
                 <img  src="data:image/png;base64,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" width="30px" style="vertical-align:0; margin-left: 10px;">
             </p>
         </div>
         <div class="totalExpense">
-            <label for="expenseshow"> <h2> Youre Total Expense </h2></label></br>
-            <p id='expenseflt'><span style="font-size: 35px;">Rs</span>
-                <span style="font-size: 35px;" id="expenseamount"></span>
+            <label style="padding-top: 20px;" for="expenseshow"> <h2> Youre Total Expense </h2></label></br>
+            <p id='expenseflt'><span style="font-size: 35px;color:red;">Rs : </span>
+                <span style="font-size: 35px;color: red;" id="expenseamount"></span>
                 <img  src="data:image/png;base64,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" width="30px" style="vertical-align:0; margin-left: 10px;">
             </p>
         </div>
         <div class="totalAmount">
             <label for="Amoutshow"> <h2> Youre Total amouts</h2></label></br>
-            <p id='balance'><span style="font-size: 35px;">Rs</span>
+            <p id='balance'><span style="font-size: 35px;">Rs = </span>
                 <span style="font-size: 35px;" id="totalbalance"></span>
             </p>
         </div>
         <div class="recentincome">
             <div class="incomeheading">
-                    <h1>Recent Income</h1>
+                    <h1 style="background-color: #448243;color: white;height: 60px;">Recent Income</h1>
                     <div class="recentincometable">
-                        recent
+                        <table id="topincome" class="table">
+                            <thead style="color: green;font-size: 20px;">
+                            <tr>
+                                <td>Type</td>
+                                <td>Amount</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tincome"></tbody>
+                        </table>
                     </div>
             </div>
         </div>
         <div class="recentExpense">
             <div class="incomeheading">
-                    <h1>Recent Expense</h1>
+                    <h1 style="background-color: red;color: white; height: 60px;">Recent Expense</h1>
                     <div class="recentincometable">
-                        recent Expense
+                        <table id="topexpense" class="table">
+                            <thead style="color: red;font-size: 20px;">
+                            <tr>
+                                <td>Type</td>
+                                <td>Amount</td>
+                            </tr>
+                            </thead>
+                            <tbody id="texpense"></tbody>
+                        </table>
                     </div>
             </div>
         </div>
       </div>
-
+      
+      <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+      
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        
       
     
        <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -87,7 +107,8 @@
        firebase.analytics();
        </script>
        <script type="text/javascript" src="transction.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

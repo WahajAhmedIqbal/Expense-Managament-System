@@ -1,12 +1,11 @@
 getdatatable()
-// monthfilter()
-// setname()
-// function setname(){ 
-    //     const getname = localStorage.getItem('userName');
-    //     const upname = JSON.parse(getname);
-    //     const pname = document.getElementById('user')
-    //     pname.innerHTML = upname    
-    // }
+setname()
+function setname(){ 
+        const getname = localStorage.getItem('userName');
+        const upname = JSON.parse(getname);
+        const pname = document.getElementById('user')
+        pname.innerHTML = upname    
+    }
     function logout(){
         window.location.replace('../login.html')
     }
@@ -18,8 +17,6 @@ getdatatable()
         const category = document.getElementById('category').value
         const date = document.getElementById('date').valueAsDate
         const Discription = document.getElementById('Discription').value
-        
-        
         
         firebase.firestore().collection('transection').add({
             amount,
@@ -82,7 +79,6 @@ function clearmodel(){
 
 function getdatatable(){
     const userid = localStorage.getItem('userId')
-    // const month = document.getElementById('month')
     const table = document.getElementById('tbody')
     table.innerHTML = ""
 
@@ -116,13 +112,10 @@ function getdatatable(){
 function typefilter(){
     const userid = localStorage.getItem('userId')
     const type = document.getElementById('filter').value
-    // monthfilter()
     if(type === 'all' ){
         return getdatatable()
     }
     
-    
-
     const table = document.getElementById('tbody')
     table.innerHTML = ""
 
@@ -153,3 +146,4 @@ function typefilter(){
         });
     });
 }
+

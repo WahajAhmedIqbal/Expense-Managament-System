@@ -1,9 +1,8 @@
 .head2 {
-    display: flex;
-    background-color: #347aeb;
-    justify-content: flex-end;
-    align-items: center;
-    color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
   }
 
 .padding {
@@ -27,7 +26,7 @@
 }
 
 .transactions-header {
-  background-color: #15438c;
+  background-color: #008000;
   height: 80px;
   color: white;
   display: flex;
